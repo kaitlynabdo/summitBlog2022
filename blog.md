@@ -55,7 +55,7 @@ OpenShift, Kubernetes and a few other platforms have made their CI data public. 
 
 <p align="center">
 <img width="559" alt="Screen Shot 2022-05-02 at 10 53 37 PM" src="https://user-images.githubusercontent.com/45447032/166409892-0aea4010-849c-4245-9ae6-ffcda890e79c.png">
-</p> <br>
+</p>
 <p align="center"> <strong> Figure 2: AI4CI </strong> </p>
 
 ### Data Engineering
