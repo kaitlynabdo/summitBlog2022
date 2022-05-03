@@ -69,11 +69,37 @@ There are currently five open datasets that can be used to help us fully describ
 <p align="center"> <strong> Figure 3: Data Engineering Phase </strong> </p>
 
 ### Model Development
+
 With the data sources made easily accessible and with the necessary metrics and KPIs available to quantify and evaluate the CI workflow we can start to apply some AI and machine learning techniques to help improve the CI workflow. There are many ways in which this could be done given the multimodal, multi-source nature of our data. Instead of defining a single specific problem to solve, our current aim is to curate a hub for multiple machine learning and analytics models centered around this data focused on improving CI workflows. Below is a list of the current ML and analytics models.
 
 #### Github Time to Merge Prediction
+
 To quantify critical metrics within a software development workflow, we can start by calculating metrics related to code contributions. One such metric which can help identify bottlenecks within the development process can be the time taken to merge an open pull request. By predicting the time that it could take to merge a PR, we can better allocate development resources.
 
 We would like to create a GitHub bot that ingests information from a PR (Pull Request), including the written description, author, number of files, etc, in addition to the diff, and returns a prediction for how long it will take to be merged. For that, we train a model which can predict the time taken to merge a PR and classify it into one of a few predefined time ranges. To train this model, we use the features engineered from the raw PR data. We explored various vanilla classifiers, like Naive Bayes, SVM, Random Forests, and XGBoost. We use [Jupyter notebooks](https://jupyter.org/) to train the model. You can take a look at our [model training notebook](https://github.com/aicoe-aiops/ocp-ci-analysis/blob/master/notebooks/time-to-merge-prediction/time_to_merge_model.ipynb) in our project repository for more details.
 
+#### TestGrid Failure Type Classification
+
+Currently, human subject matter experts are able to identify different types of failures by looking at the test grids. This is, however, a manual process. This project aims to automate the manual identification process for individual Test Grids. This can be thought of as a classification problem aimed at classifying errors on the test grids as either flakey tests, infra flakes, install flakes or new test failures. We use [Jupyter notebooks](https://jupyter.org/) to train the model. You can take a look at our [model training notebook](https://github.com/aicoe-aiops/ocp-ci-analysis/blob/master/notebooks/time-to-merge-prediction/time_to_merge_model.ipynb) in our project repository for more details.
+
+#### Prow Log Classification
+
+Logs represent a rich source of information for automated triaging and root cause analysis. Unfortunately, logs are very noisy data types, i.e, two logs that are of the same type but from two different sources may be different enough at a character level that traditional comparison methods are insufficient to capture this similarity. To overcome this issue, we will use the Prow logs made available to us by this project to identify useful methods for learning log templates that denoise log data and help improve performance on downstream ML tasks.
+
+We start by applying a clustering algorithm to job runs based on the term frequency within their build logs to group job runs according to their type of failure. We use [Jupyter notebooks](https://jupyter.org/) to train the model. You can take a look at our [model training notebook](https://github.com/aicoe-aiops/ocp-ci-analysis/blob/master/notebooks/data-sources/gcsweb-ci/build-logs/build_log_term_freq.ipynb) in our project repository for more details.
+
+#### Optimal Stopping Point Prediction
+
+Every new Pull Request to a repository with new code changes is subjected to an automated set of builds and tests before being merged. Some tests may run for longer durations for various reasons such as unoptimized algorithms, slow networks, or the simple fact that many different independent services are part of a single test. Longer running tests are often painful as they can block the CI/CD process for longer periods of time. By predicting the optimal stopping point for the test, we can better allocate development resources.
+
+[TestGrid](https://testgrid.k8s.io/) is a platform that is used to aggregate and visually represent the results of all these automated tests. Based on test and build time duration data available on testgrid, we can predict and suggest a stopping point, beyond which a given test is likely to result in a failure. We use [Jupyter notebooks](https://jupyter.org/) to train the model. You can take a look at our [model training notebook](https://github.com/aicoe-aiops/ocp-ci-analysis/blob/master/notebooks/optimal-stopping-point/osp_model.ipynb) in our project repository for more details.
+
+### Model Deployment
+
+Now that we have all our models implemented we can deploy them into a production environment. To make these machine learning models available at an interactive endpoint, we serve the model yielding the best results into a Seldon Core service. [Seldon Core](https://www.seldon.io/) is an open-source framework that makes it easier and faster to deploy your machine learning models and experiments at scale on Kubernetes. Seldon Core serves models built in any open-source or commercial model building framework. You can make use of powerful Kubernetes features like custom resource definitions to manage model graphs. And then connect your continuous integration and deployment (CI/CD) tools to scale and update your deployment.
+
+To make the machine learning model available at an interactive endpoint, we serve the model yielding the best results into a Seldon service. You can take a look at one of our Seldon deployment configurations created to serve one of our models. We create a sklearn pipeline consisting of 2 steps, scaling of the input features and the model itself.
+The interactive model endpoints of some of the models can be viewed here:
+- [GitHub Time To Merge Model Endpoint](http://github-pr-ttm-ds-ml-workflows-ws.apps.smaug.na.operate-first.cloud/predict)
+- [Optimal Stopping Point Model Endpoint](http://optimal-stopping-point-ds-ml-workflows-ws.apps.smaug.na.operate-first.cloud/predict)
 
