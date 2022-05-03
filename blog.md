@@ -24,13 +24,13 @@ This life cycle has five steps:
 
 With respect to how machine learning is achieved in practice, and thinking about the fact that an intelligent application is a distributed system, there are actually quite a few players/personas involved. Let’s take a close look at the personas involved in this ML lifecycle and the major categories of managed services that would be required for model delivery. Please note that it's possible that different organizations may not have all of the following job titles involved and the description provided below is to mainly help generalize the tasks during each step of the life cycle.
 
-- Business Leadership
+- **Business Leadership**
   - The role of the business leadership is to define the use case, business requirements for the AI/ML project and business outcome goals to be achieved such as improving customer experience, reducing costs, shortening build times etc.
-- Data Engineer
+- **Data Engineer**
   - The role of the data engineer is to take in raw data and curate (clean, prepare and organize) it for the data scientist to consume. Data engineers therefore need the ability to produce and reproduce data pipelines on demand. They need services that will be able to automate the tasks of pulling in raw data and curating it. Note the data engineers have to be able to monitor the raw and curated data to make certain it is of high quality. And it is imperative that they detect and fix any issues with the data before the data scientist receives and starts work on it. Additionally, the data engineer should be the point of contact for data security and access control for audit purposes and ensuring that no unknown data sources are used.
-- Data Scientists
+- **Data Scientists**
   - The role of a data scientist is to analyze a data science problem and through repeatable experiments produce an analysis using algorithms and models along with a variety of programming languages (such as Python or R) and their associated libraries. Common tools include using PyCharm, Anaconda or JupyterLab Integrated Development Environments (IDEs) with Jupyter notebooks for experimentation, and having a reproducible and shareable work environment to deliver their solutions on. Data scientists are often not concerned with underlying infrastructure, code repositories, and model deployment and delivery methods. Instead, their focus should be on experimenting and generating high quality models for the use case.
-- App Developer / ML Engineer
+- **App Developer / ML Engineer**
   - The focus of the application developer is to run and integrate the model serving microservice and possibly other applications that use the model serving microservice into an intelligent application in a production environment. They spend a great deal of effort in building and maintaining the serving pipelines which automate the model rollout process into production. This step is crucial as it takes the model from the data scientist and developer workspace to a code repository and then ensures a secure and smooth delivery (usually via containerization) into the production environment. In some cases, application developers may not have the machine learning know-how to streamline the delivery of a model and can get help from the data scientist or ML Engineer.
-- IT Operations
+- **IT Operations**
   - IT operations is concerned with the overall usability of the platform. They are also responsible for infrastructure monitoring (that is, compute, networking and storage), platform maintenance (for example, Kubernetes), platform security, and hardware acceleration (for example, Nvidia GPUs). It is vital that the other roles work with IT Operations to ensure that anything nonstandard in the environment is vetted before use.
