@@ -35,4 +35,7 @@ With respect to how machine learning is achieved in practice, and thinking about
 - **IT Operations**
   - IT operations is concerned with the overall usability of the platform. They are also responsible for infrastructure monitoring (that is, compute, networking and storage), platform maintenance (for example, Kubernetes), platform security, and hardware acceleration (for example, Nvidia GPUs). It is vital that the other roles work with IT Operations to ensure that anything nonstandard in the environment is vetted before use.
 
-<img width="643" alt="Screen Shot 2022-05-02 at 10 44 56 PM" src="https://user-images.githubusercontent.com/45447032/166409262-b2673ab1-eb87-4b3c-aa63-086ee524e1ad.png">
+<p align="center">
+<img width="919" alt="Screen Shot 2022-05-02 at 10 46 27 PM" src="https://user-images.githubusercontent.com/45447032/166409387-51d05189-a43d-4acd-a79c-d976284c3e35.png">
+</p>
+
