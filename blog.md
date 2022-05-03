@@ -63,3 +63,17 @@ Before we attempt to apply any AI or machine learning techniques to improve the 
 
 There are currently five open datasets that can be used to help us fully describe the CI process: [Testgrid](https://github.com/GoogleCloudPlatform/testgrid), [Prow](https://prow.ci.openshift.org/), [Github](https://github.com/), [Telemetry](https://github.com/beam-telemetry/telemetry_metrics_prometheus) and [Bugzilla](https://bugzilla.redhat.com/). This data is currently stored in disparate locations and does not exist in a data science friendly format ready for analysis. In the data engineering phase, we focus on collecting the data from these different sources and storing them in [Ceph](https://www.redhat.com/en/technologies/storage/ceph), exploring the data, creating tables in [Trino database](https://trino.io/) and visualizing the data using [Apache Superset](https://superset.apache.org/) and preparing the data for model development.
 
+<p align="center">
+<img width="702" alt="Screen Shot 2022-05-02 at 11 01 37 PM" src="https://user-images.githubusercontent.com/45447032/166410489-5b9e65d7-9f36-4420-a81c-965f58ddbfa8.png">
+</p>
+<p align="center"> <strong> Figure 3: Data Engineering Phase </strong> </p>
+
+### Model Development
+With the data sources made easily accessible and with the necessary metrics and KPIs available to quantify and evaluate the CI workflow we can start to apply some AI and machine learning techniques to help improve the CI workflow. There are many ways in which this could be done given the multimodal, multi-source nature of our data. Instead of defining a single specific problem to solve, our current aim is to curate a hub for multiple machine learning and analytics models centered around this data focused on improving CI workflows. Below is a list of the current ML and analytics models.
+
+#### Github Time to Merge Prediction
+To quantify critical metrics within a software development workflow, we can start by calculating metrics related to code contributions. One such metric which can help identify bottlenecks within the development process can be the time taken to merge an open pull request. By predicting the time that it could take to merge a PR, we can better allocate development resources.
+
+We would like to create a GitHub bot that ingests information from a PR (Pull Request), including the written description, author, number of files, etc, in addition to the diff, and returns a prediction for how long it will take to be merged. For that, we train a model which can predict the time taken to merge a PR and classify it into one of a few predefined time ranges. To train this model, we use the features engineered from the raw PR data. We explored various vanilla classifiers, like Naive Bayes, SVM, Random Forests, and XGBoost. We use [Jupyter notebooks](https://jupyter.org/) to train the model. You can take a look at our [model training notebook](https://github.com/aicoe-aiops/ocp-ci-analysis/blob/master/notebooks/time-to-merge-prediction/time_to_merge_model.ipynb) in our project repository for more details.
+
+
