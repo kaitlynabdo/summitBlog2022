@@ -37,6 +37,6 @@ With respect to how machine learning is achieved in practice, and thinking about
 
 <p align="center">
 <img width="919" alt="Screen Shot 2022-05-02 at 10 46 27 PM" src="https://user-images.githubusercontent.com/45447032/166409387-51d05189-a43d-4acd-a79c-d976284c3e35.png">
-</p>
+</p> <br>
 
 **Figure 1: Data Science Model Lifecycle: Figure 1 above shows the different phases in the lifecycle and the key personas involved throughout the different phases. **
