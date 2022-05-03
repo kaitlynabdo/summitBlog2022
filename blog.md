@@ -103,3 +103,30 @@ The interactive model endpoints of some of the models can be viewed here:
 - [GitHub Time To Merge Model Endpoint](http://github-pr-ttm-ds-ml-workflows-ws.apps.smaug.na.operate-first.cloud/predict)
 - [Optimal Stopping Point Model Endpoint](http://optimal-stopping-point-ds-ml-workflows-ws.apps.smaug.na.operate-first.cloud/predict)
 
+We have also created model inference Jupyter notebooks to check whether the Seldon service is running as intended, and more specifically to ensure that the model performance is what we expect it to be. Some of the model inference notebooks can be found here:
+- [GitHub Time to Merge Model Inference Notebook](https://github.com/aicoe-aiops/ocp-ci-analysis/blob/master/notebooks/time-to-merge-prediction/model_inference.ipynb)
+- [Optimal Stopping Point Model Inference Notebook](https://github.com/aicoe-aiops/ocp-ci-analysis/blob/master/notebooks/optimal-stopping-point/model_inference.ipynb)
+
+
+## Model Monitoring and Management
+
+Model monitoring collects and stores data about the ML model behavior for data scientists so they can learn how models behave with real production data. With this information, data scientists can evaluate the models and take appropriate actions. Model monitoring and management involves:
+
+- **Monitoring the Data** - The data coming from the “real world” is beyond our control and presents unique challenges. Therefore, we need to validate that the incoming data sets are of expected format and that the data comes in acceptable ranges.
+
+- **Monitor Model Performance** - Software functionality tends to be binary — it works or it doesn’t. However, models are probabilistic. So you often can’t say definitively whether the model “is working”. However, you can get a good feel by monitoring model performance to check against unacceptable swings in core metrics such as standard deviation or mean average percent error.
+
+- **Run A/B Tests** - Models can drift to become worse than random noise. They can also (nearly) always be improved. Therefore, during operations, we should continue to routinely hold-out small portions of our population as a control group to test performance against the running model. Occasionally, we can develop and deploy new test models to measure their performance against the incumbent production model.
+
+- **Ensure Proper Model Governance** - Regulations in certain industries require organizations to be able to explain why a model made certain decisions. And even if you’re not in one of these regulated industries, you will want to be able to trace the specific set of data and the specific model used to evaluate specific outcomes.
+
+Some of the open source tools we use at Red Hat for model monitoring include Seldon Core and Kubeflow. Seldon Core is an open source MLOps framework designed to streamline machine learning workflows with logging, advanced metrics, testing, scaling, and conversion of models into production microservices. Kubeflow is a full-fledged open source MLOps tool that makes the orchestration and deployment of machine learning workflows easier. Kubeflow provides dedicated services and integration for various phases of machine learning, including training, pipeline creation, and management of Jupyter notebooks.
+
+#Next Steps
+
+There are a variety of different methods to solve a machine learning challenge. The model life cycle, we have explained, illustrates the development of a model from identifying a need to taking a solution to deployment. To explain the model life cycle in practice, [AI for Continuous Integration](https://github.com/aicoe-aiops/ocp-ci-analysis) is a direction that data scientists at Red Hat chose to tackle developing more intelligent CI/CD monitoring. Having good CI practices creates better communication and collaboration, more efficiency to identify bugs or errors, reduced meticulous and repetitive tasks, and many more. 
+
+To learn more about the model life cycles, read the blog: [Enterprise MLOps Reference Design](https://cloud.redhat.com/blog/enterprise-mlops-reference-design). If you have questions, we would be happy to answer them. Please reach out to Kaitlyn Abdo and/or Hema Veeradhi.
+
+
+
