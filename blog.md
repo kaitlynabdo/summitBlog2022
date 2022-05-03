@@ -124,7 +124,7 @@ Model monitoring collects and stores data about the ML model behavior for data s
 
 - **Ensure Proper Model Governance** - Regulations in certain industries require organizations to be able to explain why a model made certain decisions. And even if you’re not in one of these regulated industries, you will want to be able to trace the specific set of data and the specific model used to evaluate specific outcomes.
 
-Some of the open source tools we use at Red Hat for model monitoring include Seldon Core and Kubeflow. Seldon Core is an open source MLOps framework designed to streamline machine learning workflows with logging, advanced metrics, testing, scaling, and conversion of models into production microservices. Kubeflow is a full-fledged open source MLOps tool that makes the orchestration and deployment of machine learning workflows easier. Kubeflow provides dedicated services and integration for various phases of machine learning, including training, pipeline creation, and management of Jupyter notebooks.
+Some of the open source tools we use at Red Hat for model monitoring include [Seldon Core](https://github.com/SeldonIO/seldon-core) and [Kubeflow](https://thechief.io/c/editorial/top-10-open-source-mlops-tools/#Kubeflow). Seldon Core is an open source MLOps framework designed to streamline machine learning workflows with logging, advanced metrics, testing, scaling, and conversion of models into production microservices. Kubeflow is a full-fledged open source MLOps tool that makes the orchestration and deployment of machine learning workflows easier. Kubeflow provides dedicated services and integration for various phases of machine learning, including training, pipeline creation, and management of Jupyter notebooks.
 
 ## Next Steps
 
