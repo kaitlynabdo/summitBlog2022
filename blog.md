@@ -53,3 +53,15 @@ Now, let's look at the model lifecycle in detail with an example use case/projec
 One major component of the software development and operations workflow is Continuous Integration (CI), which involves running automated builds and tests of software before it is merged into a production code base. For example, if you are developing a container orchestration platform like Kubernetes or OpenShift, these are huge code bases with large builds and many tests that will produce a lot of data that can be difficult to parse if you are trying to figure out why a build is failing or why a certain set of tests aren’t passing.
 
 OpenShift, Kubernetes and a few other platforms have made their CI data public. This is real world multimodal production operations data, a rarity for public data sets today. This presents a great starting point and a first initial area of investigation for the AI Operations (AIOps) community to tackle. The aim is to cultivate open source projects by developing, integrating and operating AI tools for CI by leveraging the open data that has been made available by OpenShift, Kubernetes and others.
+
+<p align="center">
+<img width="559" alt="Screen Shot 2022-05-02 at 10 53 37 PM" src="https://user-images.githubusercontent.com/45447032/166409892-0aea4010-849c-4245-9ae6-ffcda890e79c.png">
+</p> <br>
+
+**Figure 2: AI4CI**
+
+### Data Engineering
+Before we attempt to apply any AI or machine learning techniques to improve the CI workflow, it is important that we know how to both quantify and evaluate the current state of the CI workflow. In order to do this we must establish and collect the relevant metrics and key performance indicators (KPIs) needed to measure it. This is a critical first step as it allows us to quantify the state of CI operations, as well as apply the KPIs we will need to evaluate the impact of our AI tools in the future.
+
+There are currently five open datasets that can be used to help us fully describe the CI process: [Testgrid](https://github.com/GoogleCloudPlatform/testgrid), [Prow](https://prow.ci.openshift.org/), [Github](https://github.com/), [Telemetry](https://github.com/beam-telemetry/telemetry_metrics_prometheus) and [Bugzilla](https://bugzilla.redhat.com/). This data is currently stored in disparate locations and does not exist in a data science friendly format ready for analysis. In the data engineering phase, we focus on collecting the data from these different sources and storing them in [Ceph](https://www.redhat.com/en/technologies/storage/ceph), exploring the data, creating tables in [Trino database](https://trino.io/) and visualizing the data using [Apache Superset](https://superset.apache.org/) and preparing the data for model development.
+
