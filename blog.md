@@ -38,8 +38,7 @@ With respect to how machine learning is achieved in practice, and thinking about
 <p align="center">
 <img width="919" alt="Screen Shot 2022-05-02 at 10 46 27 PM" src="https://user-images.githubusercontent.com/45447032/166409387-51d05189-a43d-4acd-a79c-d976284c3e35.png">
 </p> <br>
-
-**Figure 1: Data Science Model Lifecycle**
+<p align="center"> <strong> Figure 1: Data Science Model Lifecycle</strong> </p>
 
 Figure 1 above shows the different phases in the lifecycle and the key personas involved throughout the different phases.
 
@@ -57,7 +56,6 @@ OpenShift, Kubernetes and a few other platforms have made their CI data public. 
 <p align="center">
 <img width="559" alt="Screen Shot 2022-05-02 at 10 53 37 PM" src="https://user-images.githubusercontent.com/45447032/166409892-0aea4010-849c-4245-9ae6-ffcda890e79c.png">
 </p> <br>
-
 <p align="center"> <strong> Figure 2: AI4CI </strong> </p>
 
 ### Data Engineering
