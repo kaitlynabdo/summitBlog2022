@@ -122,7 +122,7 @@ Model monitoring collects and stores data about the ML model behavior for data s
 
 Some of the open source tools we use at Red Hat for model monitoring include Seldon Core and Kubeflow. Seldon Core is an open source MLOps framework designed to streamline machine learning workflows with logging, advanced metrics, testing, scaling, and conversion of models into production microservices. Kubeflow is a full-fledged open source MLOps tool that makes the orchestration and deployment of machine learning workflows easier. Kubeflow provides dedicated services and integration for various phases of machine learning, including training, pipeline creation, and management of Jupyter notebooks.
 
-#Next Steps
+# Next Steps
 
 There are a variety of different methods to solve a machine learning challenge. The model life cycle, we have explained, illustrates the development of a model from identifying a need to taking a solution to deployment. To explain the model life cycle in practice, [AI for Continuous Integration](https://github.com/aicoe-aiops/ocp-ci-analysis) is a direction that data scientists at Red Hat chose to tackle developing more intelligent CI/CD monitoring. Having good CI practices creates better communication and collaboration, more efficiency to identify bugs or errors, reduced meticulous and repetitive tasks, and many more. 
 
