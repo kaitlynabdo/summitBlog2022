@@ -44,11 +44,11 @@ With respect to how machine learning is achieved in practice, and thinking about
 Figure 1 above shows the different phases in the lifecycle and the key personas involved throughout the different phases.
 
 
-#Model Lifecycle in Detail
+## Model Lifecycle in Detail
 
 Now, let's look at the model lifecycle in detail with an example use case/project that some of the data scientists at Red Hat worked on. AI for Continuous Integration is a project focusing on developing AI tools for developers by leveraging the data made openly available by OpenShift and Kubernetes CI platforms.
 
-##Problem Definition
+# Problem Definition
 
 One major component of the software development and operations workflow is Continuous Integration (CI), which involves running automated builds and tests of software before it is merged into a production code base. For example, if you are developing a container orchestration platform like Kubernetes or OpenShift, these are huge code bases with large builds and many tests that will produce a lot of data that can be difficult to parse if you are trying to figure out why a build is failing or why a certain set of tests aren’t passing.
 
