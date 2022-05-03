@@ -58,7 +58,7 @@ OpenShift, Kubernetes and a few other platforms have made their CI data public. 
 <img width="559" alt="Screen Shot 2022-05-02 at 10 53 37 PM" src="https://user-images.githubusercontent.com/45447032/166409892-0aea4010-849c-4245-9ae6-ffcda890e79c.png">
 </p> <br>
 
-<p align="center"> Figure 2: AI4CI </p>
+<p align="center"> <strong> Figure 2: AI4CI </strong> </p>
 
 ### Data Engineering
 Before we attempt to apply any AI or machine learning techniques to improve the CI workflow, it is important that we know how to both quantify and evaluate the current state of the CI workflow. In order to do this we must establish and collect the relevant metrics and key performance indicators (KPIs) needed to measure it. This is a critical first step as it allows us to quantify the state of CI operations, as well as apply the KPIs we will need to evaluate the impact of our AI tools in the future.
